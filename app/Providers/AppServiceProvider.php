@@ -30,5 +30,8 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('update-post',function(User $user,$targetUser){
             return $user->id === $targetUser;
         });
+        Gate::define('delete-post',function(User $user,$targetUser){
+            return $user->id === $targetUser;
+        });
     }
 }
