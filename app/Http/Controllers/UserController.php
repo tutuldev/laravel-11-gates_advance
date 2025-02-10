@@ -92,7 +92,11 @@ class UserController extends Controller
     }
 
     public function UpdatePost($postid){
-        $post = Post::findOrFail($postid);
+
+        $post = Post::find($postid);
+        $targetUser = $post->user_id;
+
+        Gate::authorize('update-post', $targetUser);
         return $post;
     }
 }

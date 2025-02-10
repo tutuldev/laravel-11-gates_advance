@@ -27,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('view-profile',function(User $user,$profileUser){
             return $user->id === $profileUser;
         });
+        Gate::define('update-post',function(User $user,$targetUser){
+            return $user->id === $targetUser;
+        });
     }
 }
