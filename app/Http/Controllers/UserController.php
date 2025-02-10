@@ -52,13 +52,17 @@ class UserController extends Controller
         //     return redirect()->route('loginPage');
         // }
         // using Gate method
-        if(Gate::allows('isAdmin')){
-            return "Hellow , You are Admin.";
-        }else{
-            return "Access Denied.";
-        }
+        // if(Gate::allows('isAdmin')){
+        //     // return "Hellow , You are Admin.";
+        //     return view('dashboard');
+        // }else{
+        //     return "Access Denied.";
+        // }
 
-        // return view('dashboard');
+        // gate method 2
+        Gate::authorize('isAdmin'); //true na hole 403 page return korbe
+        return view('dashboard');
+
 
     }
       public function viewProfile(){
