@@ -19,7 +19,14 @@ Route::post('/login', [UserController::class, 'login'])->name('loginMatch');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
-Route::get('/dashboard', [UserController::class, 'dashboardPage'])->name('dashboard');
+// 1 way
+// Route::get('/dashboard', [UserController::class, 'dashboardPage'])
+// ->name('dashboard')->middleware('can:isAdmin');
+
+// way 2
+Route::get('/dashboard', [UserController::class, 'dashboardPage'])
+->name('dashboard')->can('isAdmin');
+
 Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile.show');
 Route::get('/post', [UserController::class, 'viewPost'])->name('post.show');
 
