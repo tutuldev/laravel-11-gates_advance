@@ -32,4 +32,5 @@ Route::get('/dashboard', [UserController::class, 'dashboardPage'])
 
 Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('profile.show');
 Route::get('/post/{id}', [UserController::class, 'viewPost'])->name('post.show');
+Route::get('/singel-post/{id}', [UserController::class, 'UpdatePost'])->name('post.update');
 

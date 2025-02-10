@@ -90,4 +90,9 @@ class UserController extends Controller
         // return $posts;
         return view('post',compact('posts'));
     }
+
+    public function UpdatePost($postid){
+        $post = Post::findOrFail($postid);
+        return $post;
+    }
 }
