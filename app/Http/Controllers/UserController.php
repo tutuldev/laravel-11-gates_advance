@@ -51,7 +51,7 @@ class UserController extends Controller
         // if (!Auth::check()) {
         //     return redirect()->route('loginPage');
         // }
-        // using Gate method
+        // using Gate method 1
         // if(Gate::allows('isAdmin')){
         //     // return "Hellow , You are Admin.";
         //     return view('dashboard');
@@ -60,7 +60,7 @@ class UserController extends Controller
         // }
 
         // gate method 2
-        Gate::authorize('isAdmin'); //true na hole 403 page return korbe
+        // Gate::authorize('isAdmin'); //true na hole 403 page return korbe
         return view('dashboard');
 
 

@@ -9,12 +9,24 @@
 </head>
 <body>
     <div class="container">
+        <h1>This is Dashboard</h1>
+        {{-- @if (Gate::allows('isAdmin'))
         <h2 class="mb-3">Welcome, {{ optional(Auth::user())->name ?? 'Guest' }}</h2>
-
         <a href="" class="btn btn-success">Admin Panel</a>
         <a href="/profile" class="btn btn-primary">Profile</a>
         <a href="/post" class="btn btn-info">Post</a><br>
         <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
+        @endif --}}
+
+
+
+        @can ('isAdmin')
+        <h2 class="mb-3">Welcome, {{ optional(Auth::user())->name ?? 'Guest' }}</h2>
+        <a href="" class="btn btn-success">Admin Panel</a>
+        <a href="/profile" class="btn btn-primary">Profile</a>
+        <a href="/post" class="btn btn-info">Post</a><br>
+        <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
+        @endcan
     </div>
 </body>
 </html>
