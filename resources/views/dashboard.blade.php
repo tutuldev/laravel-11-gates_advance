@@ -26,6 +26,9 @@
         <a href="/profile" class="btn btn-primary">Profile</a>
         <a href="/post" class="btn btn-info">Post</a><br>
         <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
+        @else
+        <a href="" class="btn btn-success">Gust Panel</a>
+
         @endcan
     </div>
 </body>
