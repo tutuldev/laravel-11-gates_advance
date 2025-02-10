@@ -1,0 +1,9 @@
+INSERT INTO posts (title, description, user_id, created_at, updated_at) VALUES
+('Laravel Basics', 'Introduction to Laravel framework and its features.', 1, NOW(), NOW()),
+('Eloquent Relationships', 'Understanding one-to-many, many-to-many relationships in Laravel.', 2, NOW(), NOW()),
+('Vue.js with Laravel', 'Integrating Vue.js frontend with Laravel backend.', 3, NOW(), NOW()),
+('Database Migrations', 'How to create and run database migrations in Laravel.', 1, NOW(), NOW()),
+('Laravel Authentication', 'Using Laravel Breeze and Jetstream for authentication.', 2, NOW(), NOW()),
+('REST API in Laravel', 'Building RESTful APIs using Laravel.', 3, NOW(), NOW()),
+('Blade Templating', 'Understanding the Laravel Blade templating engine.', 1, NOW(), NOW()),
+('Queues and Jobs', 'Handling background tasks using Laravel Queues.', 2, NOW(), NOW());
