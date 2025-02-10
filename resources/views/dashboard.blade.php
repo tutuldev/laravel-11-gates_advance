@@ -23,17 +23,21 @@
         @can ('isAdmin')
         <h2 class="mb-3">Welcome, {{ optional(Auth::user())->name ?? 'Guest' }}</h2>
         <a href="" class="btn btn-success">Admin Panel</a>
-        <a href="/profile" class="btn btn-primary">Profile</a>
-        <a href="/post" class="btn btn-info">Post</a><br>
-        <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
+        <a href="{{route('post.show')}}" class="btn btn-info">Post</a><br>
         @else
         <a href="" class="btn btn-success">Gust Panel</a>
         @endcan
-
-
         @cannot('isAdmin')
         <a href="" class="btn btn-success">None Admin</a>
         @endcannot
+
+
+
+        <a href="{{route('profile.show',Auth::id())}}" class="btn btn-primary  mt-3">Profile</a>
+        <br>
+        <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
+
+
 
     </div>
 </body>

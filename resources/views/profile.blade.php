@@ -30,13 +30,15 @@
                     <h3>Profile</h3>
                 </div>
                 <div class="card-body">
-                   <h5>Id:</h5>
+                   <h5>Id: {{$user->id}}</h5>
                    <hr>
-                   <h5>Name:</h5>
+                   <h5>Name:  {{$user->name}}</h5>
                    <hr>
-                   <h5>Email:</h5>
+                   <h5>Email:  {{$user->email}}</h5>
                    <hr>
-                   <h5>Roll:</h5>
+                   <h5>Age:  {{$user->age}}</h5>
+                   <hr>
+                   <h5>Roll:  {{$user->role}}</h5>
                    <hr>
                    <a href="/" class="btn btn-secondary">Back</a>
                    <a href="/dashboard" class="btn btn-success">Dashboard</a>

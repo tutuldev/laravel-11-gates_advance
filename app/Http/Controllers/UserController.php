@@ -65,8 +65,10 @@ class UserController extends Controller
 
 
     }
-      public function viewProfile(){
-        return view('profile');
+      public function viewProfile(int $userid){
+        $user = User::findOrFail($userid);
+        // return $user;
+        return view('profile',compact('user'));
     }
       public function viewPost(){
         return view('post');

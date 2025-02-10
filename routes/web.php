@@ -27,6 +27,6 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [UserController::class, 'dashboardPage'])
 ->name('dashboard')->can('isAdmin');
 
-Route::get('/profile', [UserController::class, 'viewProfile'])->name('profile.show');
+Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('profile.show');
 Route::get('/post', [UserController::class, 'viewPost'])->name('post.show');
 
