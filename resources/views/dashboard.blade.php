@@ -23,7 +23,7 @@
         @can ('isAdmin')
         <h2 class="mb-3">Welcome, {{ optional(Auth::user())->name ?? 'Guest' }}</h2>
         <a href="" class="btn btn-success">Admin Panel</a>
-        <a href="{{route('post.show')}}" class="btn btn-info">Post</a><br>
+        <a href="{{route('post.show',Auth::id())}}" class="btn btn-info">Post</a><br>
         @else
         <a href="" class="btn btn-success">Gust Panel</a>
         @endcan

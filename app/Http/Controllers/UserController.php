@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,6 +86,8 @@ class UserController extends Controller
 
 
       public function viewPost(){
-        return view('post');
+        $posts = Post::where('user_id',Auth::id())->get();
+        // return $posts;
+        return view('post',compact('posts'));
     }
 }

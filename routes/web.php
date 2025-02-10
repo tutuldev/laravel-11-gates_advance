@@ -31,5 +31,5 @@ Route::get('/dashboard', [UserController::class, 'dashboardPage'])
 ->name('dashboard');
 
 Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('profile.show');
-Route::get('/post', [UserController::class, 'viewPost'])->name('post.show');
+Route::get('/post/{id}', [UserController::class, 'viewPost'])->name('post.show');
 

@@ -37,15 +37,18 @@
                         <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                       </tr>
+
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td><button class="btn btn-primary">Edit</button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
-                      </tr>
+                        @foreach ($posts as $post )
+                        <tr>
+                            <td>{{$post->id}}</td>
+                            <td>{{$post->title}}</td>
+                            <td>{{$post->description}}</td>
+                            <td><button class="btn btn-primary">Edit</button></td>
+                            <td><button class="btn btn-danger">Delete</button></td>
+                          </tr>
+                        @endforeach
 
 
                     </tbody>
