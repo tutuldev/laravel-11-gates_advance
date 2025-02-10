@@ -24,8 +24,11 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 // ->name('dashboard')->middleware('can:isAdmin');
 
 // way 2
+// Route::get('/dashboard', [UserController::class, 'dashboardPage'])
+// ->name('dashboard')->can('isAdmin');
+
 Route::get('/dashboard', [UserController::class, 'dashboardPage'])
-->name('dashboard')->can('isAdmin');
+->name('dashboard');
 
 Route::get('/profile/{id}', [UserController::class, 'viewProfile'])->name('profile.show');
 Route::get('/post', [UserController::class, 'viewPost'])->name('post.show');

@@ -66,10 +66,18 @@ class UserController extends Controller
 
     }
       public function viewProfile(int $userid){
-        $user = User::findOrFail($userid);
-        // return $user;
-        return view('profile',compact('user'));
+        if(Gate::allows('view-profile',$userid)){
+            $user = User::findOrFail($userid);
+            // return $user;
+            return view('profile',compact('user'));
+        }else{
+            return redirect()->route('dashboard');
+        }
+
     }
+
+
+
       public function viewPost(){
         return view('post');
     }
