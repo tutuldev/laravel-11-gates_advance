@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="mb-3">Welcome, {{ Auth::user()->name}}</h2>
+        <h2 class="mb-3">Welcome, {{ optional(Auth::user())->name ?? 'Guest' }}</h2>
 
         <a href="" class="btn btn-success">Admin Panel</a>
         <a href="/profile" class="btn btn-primary">Profile</a>

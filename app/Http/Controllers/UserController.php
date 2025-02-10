@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -47,10 +48,17 @@ class UserController extends Controller
 
       }
       public function dashboardPage(){
-        if (!Auth::check()) {
-            return redirect()->route('loginPage');
+        // if (!Auth::check()) {
+        //     return redirect()->route('loginPage');
+        // }
+        // using Gate method
+        if(Gate::allows('isAdmin')){
+            return "Hellow , You are Admin.";
+        }else{
+            return "Access Denied.";
         }
-        return view('dashboard');
+
+        // return view('dashboard');
 
     }
       public function viewProfile(){
