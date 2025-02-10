@@ -28,8 +28,13 @@
         <a href="{{route('logout')}}" class="btn btn-danger mt-3">Logout</a>
         @else
         <a href="" class="btn btn-success">Gust Panel</a>
-
         @endcan
+
+
+        @cannot('isAdmin')
+        <a href="" class="btn btn-success">None Admin</a>
+        @endcannot
+
     </div>
 </body>
 </html>
